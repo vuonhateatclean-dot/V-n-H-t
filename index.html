@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vườn Hạt – Thực Phẩm Lành Mạnh & Hạt Dinh Dưỡng Eat Clean</title>
+  <meta name="description" content="Vườn Hạt cung cấp cookies khoai lang, bún gạo lức đỏ, nui rau củ và thực phẩm eat clean chuẩn tự nhiên, hương vị tự nhiên, giòn bùi thơm ngon cho nhịp sống hiện đại.">
+
+  <!-- Google Fonts: Roboto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Roboto', 'sans-serif'],
+          },
+          colors: {
+            'kem': '#F7F3EA',        /* Màu nền chính */
+            'olive': {
+              DEFAULT: '#788365',     /* Màu chủ đạo / CTA */
+              dark: '#5f6a4e',
+              light: '#8f9b7b',
+              50: '#f4f6f2',
+            },
+            'be': {
+              DEFAULT: '#DCC7A7',      /* Màu phụ hạt tự nhiên */
+              light: '#ebdcc5',
+              dark: '#caa97e',
+            },
+            'nau': {
+              DEFAULT: '#594536',      /* Màu nhấn trầm / Tiêu đề */
+              dark: '#3e2e23',
+              light: '#79614f',
+            },
+            'trang': '#FFFFFF',        /* Nền phụ / Thẻ */
+            'than': '#292A24',         /* Chữ nội dung */
+            'fb': {
+              DEFAULT: '#1877F2',      /* Màu thương hiệu Facebook */
+              dark: '#1465cc',
+            }
+          },
+          boxShadow: {
+            'soft': '0 8px 30px rgba(89, 69, 54, 0.08)',
+            'card': '0 4px 20px rgba(120, 131, 101, 0.12)',
+            'float': '0 12px 40px rgba(89, 69, 54, 0.15)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Tuỳ biến thanh cuộn mượt mà theo tông màu thương hiệu */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F7F3EA;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #DCC7A7;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #788365;
+    }
+
+    /* Hiệu ứng chuyển động mượt mà cho các tab sản phẩm */
+    .product-card {
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+    }
+
+    /* Badge nhấp nháy tạo sự chú ý */
+    @keyframes subtlePulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.85; transform: scale(1.03); }
+    }
+    .animate-subtle-pulse {
+      animation: subtlePulse 3s infinite ease-in-out;
+    }
+  </style>
+</head>
+<body class="bg-kem text-than font-sans antialiased selection:bg-be selection:text-nau pb-16 md:pb-0">
+
+  <!-- ========================================== -->
+  <!-- 0. TOP ANNOUNCEMENT BAR (Thanh Thông Báo) -->
+  <!-- ========================================== -->
+  <aside aria-label="Thông báo ưu đãi" class="bg-nau text-kem py-2 px-4 text-xs sm:text-sm font-medium">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-2 mx-auto sm:mx-0">
+        <span class="inline-block w-2 h-2 rounded-full bg-be animate-ping"></span>
+        <span>🎉 <strong>Khai trương gian hàng chính hãng Vườn Hạt:</strong> Tặng mã giảm 15% &amp; Miễn phí vận chuyển toàn quốc đơn từ 299K</span>
+      </div>
+      <div class="hidden sm:flex items-center gap-4 text-xs text-be">
+        <span class="flex items-center gap-1">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          100% Nông sản chuẩn loại 1
+        </span>
+        <span class="flex items-center gap-1">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          Cam kết chất lượng tự nhiên
+        </span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ========================================== -->
+  <!-- HEADER & NAVIGATION                       -->
+  <!-- ========================================== -->
+  <header class="sticky top-0 z-40 bg-kem/95 backdrop-blur-md border-b border-be/40 transition-all duration-300 shadow-sm" id="mainHeader">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      
+      <!-- Brand Logo & Name -->
+      <a href="#hero" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-olive rounded-xl p-1">
+        <img src="logo.png" alt="Logo Vườn Hạt" class="w-12 h-12 object-contain rounded-full shadow-sm group-hover:scale-105 transition-transform duration-300 border border-be/60">
+        <div class="flex flex-col">
+          <span class="text-2xl font-black tracking-tight text-nau uppercase leading-none">Vườn Hạt</span>
+          <span class="text-[11px] font-medium text-olive tracking-widest uppercase mt-0.5">Eat Clean &amp; Healthy Food</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden lg:flex items-center gap-8 font-medium text-sm text-than">
+        <a href="#hero" class="hover:text-olive transition-colors py-1 border-b-2 border-transparent hover:border-olive">Trang Chủ</a>
+        <a href="#features" class="hover:text-olive transition-colors py-1 border-b-2 border-transparent hover:border-olive">Giá Trị Cốt Lõi</a>
+        <a href="#products" class="hover:text-olive transition-colors py-1 border-b-2 border-transparent hover:border-olive">Sản Phẩm</a>
+        <a href="#offers" class="hover:text-olive transition-colors py-1 border-b-2 border-transparent hover:border-olive flex items-center gap-1.5">
+          <span>Combo Ưu Đãi</span>
+          <span class="bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full uppercase tracking-wider">Hot</span>
+        </a>
+        <a href="#social-proof" class="hover:text-olive transition-colors py-1 border-b-2 border-transparent hover:border-olive">Đánh Giá</a>
+        <a href="#policies" class="hover:text-olive transition-colors py-1 border-b-2 border-transparent hover:border-olive">Chính Sách</a>
+      </nav>
+
+      <!-- Channels CTA & Mini Cart Button -->
+      <div class="flex items-center gap-3">
+        
+        <!-- Cart Drawer Toggle Button -->
+        <button id="cartBtn" onclick="toggleCartDrawer()" class="relative p-2.5 rounded-full bg-trang border border-be/60 text-nau hover:text-olive hover:border-olive transition-all shadow-sm" title="Xem giỏ hàng" aria-label="Xem giỏ hàng">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+          </svg>
+          <span id="cartCount" class="absolute -top-1.5 -right-1.5 bg-olive text-white text-[11px] font-bold rounded-full w-5 h-5 flex items-center justify-center border-2 border-kem">0</span>
+        </button>
+
+        <!-- TikTok Shop Button -->
+        <a href="https://www.tiktok.com/@vuonhat_eatclean?_r=1&_t=ZS-9AjGgvUZVYq" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 bg-than hover:bg-black text-white text-xs font-semibold px-4 py-2.5 rounded-full shadow-sm transition-all hover:scale-105 active:scale-95" title="Gian hàng TikTok Shop chính thức">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+          <span>TikTok Shop</span>
+        </a>
+
+        <!-- Page Facebook Button -->
+        <a href="https://www.facebook.com/share/18fUya3iQN/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-fb hover:bg-fb-dark text-white text-xs font-semibold px-4 py-2.5 rounded-full shadow-sm transition-all hover:scale-105 active:scale-95" title="Page Facebook Vườn Hạt">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          <span>Page Facebook</span>
+        </a>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-xl text-nau hover:text-olive hover:bg-trang transition-colors" aria-label="Mở menu điều hướng">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Navigation -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-trang/98 border-b border-be/60 px-4 pt-3 pb-6 space-y-3 shadow-xl">
+      <nav class="flex flex-col space-y-2 font-medium text-than">
+        <a href="#hero" onclick="closeMobileMenu()" class="px-3 py-2 rounded-lg hover:bg-kem hover:text-olive transition-colors">Trang Chủ</a>
+        <a href="#features" onclick="closeMobileMenu()" class="px-3 py-2 rounded-lg hover:bg-kem hover:text-olive transition-colors">Giá Trị Cốt Lõi</a>
+        <a href="#products" onclick="closeMobileMenu()" class="px-3 py-2 rounded-lg hover:bg-kem hover:text-olive transition-colors">Sản Phẩm Nổi Bật</a>
+        <a href="#offers" onclick="closeMobileMenu()" class="px-3 py-2 rounded-lg hover:bg-kem hover:text-olive transition-colors flex items-center justify-between">
+          <span>Combo Ưu Đãi Tháng Này</span>
+          <span class="bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Tiết kiệm 30%</span>
+        </a>
+        <a href="#social-proof" onclick="closeMobileMenu()" class="px-3 py-2 rounded-lg hover:bg-kem hover:text-olive transition-colors">Đánh Giá Khách Hàng</a>
+        <a href="#policies" onclick="closeMobileMenu()" class="px-3 py-2 rounded-lg hover:bg-kem hover:text-olive transition-colors">Chính Sách &amp; Hướng Dẫn</a>
+      </nav>
+      <div class="pt-3 border-t border-be/40 flex flex-col sm:flex-row gap-2">
+        <a href="https://www.tiktok.com/@vuonhat_eatclean?_r=1&_t=ZS-9AjGgvUZVYq" target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center gap-2 bg-than text-white text-xs font-semibold py-2.5 rounded-xl">
+          <span>Gian hàng TikTok Shop</span>
+        </a>
+        <a href="https://www.facebook.com/share/18fUya3iQN/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center gap-2 bg-fb text-white text-xs font-semibold py-2.5 rounded-xl">
+          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          <span>Page Facebook Vườn Hạt</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================== -->
+  <!-- MAIN CONTENT CONTAINER                    -->
+  <!-- ========================================== -->
+  <main>
+
+    <!-- ========================================== -->
+    <!-- 1. HERO SECTION (ATTENTION - 3 GIÂY ĐẦU)   -->
+    <!-- ========================================== -->
+    <section id="hero" class="relative pt-8 pb-16 lg:pt-14 lg:pb-24 overflow-hidden">
+      <!-- Background subtle organic shapes -->
+      <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-be/20 blur-3xl pointer-events-none"></div>
+      <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-olive/10 blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          <!-- Hero Copywriting (Left Column) -->
+          <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+            
+            <!-- Category Tag -->
+            <div class="inline-flex items-center gap-2 bg-trang border border-be/80 text-nau px-4 py-1.5 rounded-full text-xs font-semibold shadow-sm tracking-wide">
+              <span class="w-2 h-2 rounded-full bg-olive"></span>
+              <span>LỐI SỐNG LÀNH MẠNH TỰ NHIÊN</span>
+              <span class="text-be-dark">•</span>
+              <span class="text-olive">VƯỜN HẠT SELECTION</span>
+            </div>
+
+            <!-- H1: Tiêu đề chính thu hút -->
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-nau tracking-tight leading-[1.15]">
+              Vị tự nhiên, <span class="text-olive underline decoration-be/70 underline-offset-8">trọn an lành</span>
+            </h1>
+
+            <!-- H2: Tiêu đề phụ nhấn mạnh sự tiện lợi & eat clean -->
+            <p class="text-base sm:text-lg text-than/90 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+              Sự kết hợp hoàn hảo từ những thành phần dinh dưỡng hảo hạng và nông sản rau củ tự nhiên, mang đến những bữa ăn lành mạnh, tiện lợi suốt cả ngày. Bùi thơm nguyên bản, trọn vị đậm đà — cùng bạn nuôi dưỡng cơ thể từ những điều tinh giản nhất.
+            </p>
+
+            <!-- 3 USP Pills Nổi Bật -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-left">
+              <div class="bg-trang/80 backdrop-blur-sm border border-be/60 rounded-2xl p-3.5 shadow-sm hover:border-olive/60 transition-colors">
+                <div class="flex items-center gap-2 text-olive font-bold text-sm mb-1">
+                  <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                  <span>100% Nguyên Liệu Loại 1</span>
+                </div>
+                <p class="text-xs text-than/75 leading-snug">Nguyên liệu được tuyển chọn qua nhiều bước, không bị vỡ vụn.</p>
+              </div>
+
+              <div class="bg-trang/80 backdrop-blur-sm border border-be/60 rounded-2xl p-3.5 shadow-sm hover:border-olive/60 transition-colors">
+                <div class="flex items-center gap-2 text-olive font-bold text-sm mb-1">
+                  <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                  <span>Hương Vị Tự Nhiên</span>
+                </div>
+                <p class="text-xs text-than/75 leading-snug">Hương vị đặc trưng từ gạo lứt và rau củ, dễ dàng kết hợp trong nhiều món ăn thơm ngon, hấp dẫn.</p>
+              </div>
+
+              <div class="bg-trang/80 backdrop-blur-sm border border-be/60 rounded-2xl p-3.5 shadow-sm hover:border-olive/60 transition-colors">
+                <div class="flex items-center gap-2 text-olive font-bold text-sm mb-1">
+                  <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                  <span>Sấy Nhiệt Thấp Giữ Chất</span>
+                </div>
+                <p class="text-xs text-than/75 leading-snug">Bảo toàn vitamin E, khoáng chất và độ giòn tự nhiên.</p>
+              </div>
+            </div>
+
+            <!-- Call-to-Action Buttons (CRO Focused) -->
+            <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4">
+              <a href="#products" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-olive hover:bg-olive-dark text-white font-bold text-base px-8 py-4 rounded-full shadow-card transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]">
+                <span>Khám Phá Sản Phẩm</span>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+
+              <a href="https://www.tiktok.com/@vuonhat_eatclean?_r=1&_t=ZS-9AjGgvUZVYq" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-than hover:bg-black text-white font-medium text-sm px-6 py-4 rounded-full shadow-sm transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+                <span>Mua Trên TikTok Shop</span>
+              </a>
+
+              <a href="https://www.facebook.com/share/18fUya3iQN/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-trang hover:bg-be/30 border border-be text-nau font-medium text-sm px-5 py-4 rounded-full shadow-sm transition-all duration-300">
+                <svg class="w-4 h-4 text-fb fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                <span>Page Facebook</span>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Hero Visual & Lifestyle Image (Right Column) -->
+          <div class="lg:col-span-5 relative">
+            <div class="relative mx-auto max-w-md lg:max-w-none">
+              
+              <!-- Main Hero Image Frame -->
+              <div class="relative z-10 rounded-3xl overflow-hidden shadow-float border-4 border-trang bg-trang">
+                <img src="5.jpg" 
+                     alt="Bữa ăn Eat Clean lành mạnh tự nhiên Vườn Hạt" 
+                     class="w-full h-[400px] sm:h-[480px] object-cover hover:scale-105 transition-transform duration-700 ease-out"
+                     loading="eager">
+              </div>
+
+              <!-- Floating Micro-badge 1: Rating -->
+              <div class="absolute -top-4 -left-4 sm:-left-6 z-20 bg-trang p-3.5 rounded-2xl shadow-card border border-be/60 flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-olive/15 text-olive flex items-center justify-center font-bold text-lg">
+                  ★
+                </div>
+                <div>
+                  <div class="flex items-center gap-1 text-amber-500 text-xs">
+                    ★★★★★
+                  </div>
+                  <p class="text-xs font-bold text-nau mt-0.5">4.9/5 Hài Lòng</p>
+                  <span class="text-[10px] text-than/60">3.200+ Đánh giá</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 2. SOCIAL PROOF (XÂY DỰNG NIỀM TIN - TRUST)-->
+    <!-- ========================================== -->
+    <section id="social-proof" class="py-16 bg-trang border-y border-be/40 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Trust Metrics Bar -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 pb-12 border-b border-be/40 text-center">
+          <div class="p-4">
+            <span class="block text-3xl sm:text-4xl font-black text-nau tracking-tight">15.000+</span>
+            <span class="block text-xs sm:text-sm font-medium text-than/80 mt-1">Bữa Ăn Trao Đi</span>
+            <span class="block text-[11px] text-than/50 mt-0.5">Đã giao tới khách hàng</span>
+          </div>
+          <div class="p-4">
+            <div class="flex items-center justify-center gap-1 text-3xl sm:text-4xl font-black text-olive tracking-tight">
+              <span>4.9</span>
+              <span class="text-amber-500 text-2xl">★</span>
+            </div>
+            <span class="block text-xs sm:text-sm font-medium text-than/80 mt-1">Đánh Giá Tích Cực</span>
+            <span class="block text-[11px] text-than/50 mt-0.5">Trên TikTok Shop &amp; Facebook</span>
+          </div>
+          <div class="p-4">
+            <span class="block text-3xl sm:text-4xl font-black text-nau tracking-tight">98%</span>
+            <span class="block text-xs sm:text-sm font-medium text-than/80 mt-1">Khách Hàng Quay Lại Mua</span>
+            <span class="block text-[11px] text-than/50 mt-0.5">Đặt hàng định kỳ mỗi tháng</span>
+          </div>
+          <div class="p-4">
+            <span class="block text-3xl sm:text-4xl font-black text-olive tracking-tight">100%</span>
+            <span class="block text-xs sm:text-sm font-medium text-than/80 mt-1">Minh Bạch Thành Phần</span>
+            <span class="block text-[11px] text-than/50 mt-0.5">Đầy đủ tem nhãn &amp; HSD</span>
+          </div>
+        </div>
+
+        <!-- Section Title -->
+        <div class="text-center max-w-2xl mx-auto pt-12 pb-10">
+          <span class="text-olive font-bold text-xs uppercase tracking-widest bg-olive/10 px-3 py-1 rounded-full">Trải Nghiệm Thực Tế</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-nau mt-3 tracking-tight">
+            Khách Hàng Nói Gì Về Vườn Hạt?
+          </h2>
+          <p class="text-sm text-than/75 mt-2">
+            Những chia sẻ chân thật từ những người bạn đã lựa chọn Vườn Hạt cho bữa ăn lành mỗi ngày.
+          </p>
+        </div>
+
+        <!-- Feedback Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Testimonial 1: Dân văn phòng -->
+          <article class="bg-kem/70 rounded-3xl p-6 border border-be/60 flex flex-col justify-between hover:shadow-card transition-shadow duration-300">
+            <div>
+              <div class="flex items-center gap-1 text-amber-500 text-sm mb-3">
+                ★★★★★
+                <span class="ml-2 text-xs font-semibold text-olive bg-olive/15 px-2 py-0.5 rounded">Đã mua Cookies Khoai Lang</span>
+              </div>
+              <p class="text-sm text-than/90 italic leading-relaxed">
+                "Sáng nào đi làm cũng vội, từ ngày có hũ Cookies Khoai Lang của Vườn Hạt để ở bàn làm việc, mình chỉ cần lấy 3-4 chiếc bánh múc ra nhâm nhi cùng tách cà phê nóng là xong bữa sáng healthy no tới trưa. Bánh thơm lừng vị khoai lang tự nhiên, giòn tan và ngọt dịu rất vừa miệng."
+              </p>
+            </div>
+            <div class="flex items-center gap-3 pt-6 mt-6 border-t border-be/40">
+              <div class="w-10 h-10 rounded-full bg-be text-nau font-bold flex items-center justify-center text-sm">
+                LA
+              </div>
+              <div>
+                <h3 class="text-sm font-bold text-nau">Chị Lan Anh</h3>
+                <p class="text-xs text-than/60">Nhân viên văn phòng, Hà Nội</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Testimonial 2: Gymer & Fitness -->
+          <article class="bg-kem/70 rounded-3xl p-6 border border-be/60 flex flex-col justify-between hover:shadow-card transition-shadow duration-300">
+            <div>
+              <div class="flex items-center gap-1 text-amber-500 text-sm mb-3">
+                ★★★★★
+                <span class="ml-2 text-xs font-semibold text-olive bg-olive/15 px-2 py-0.5 rounded">Đã mua Bún Gạo Lức Đỏ &amp; Nui Ống Rau Củ</span>
+              </div>
+              <p class="text-sm text-than/90 italic leading-relaxed">
+                "Mình tập gym nên rất khó tính về nguồn tinh bột chậm và dinh dưỡng lành. Bún gạo lức đỏ của shop nấu dai ngon, không bở, ăn cùng ức gà rất hợp; nui ống rau củ Sa Đéc thì thơm tự nhiên, nấu súp rau củ rất ngọt nước. Rất đáng tiền!"
+              </p>
+            </div>
+            <div class="flex items-center gap-3 pt-6 mt-6 border-t border-be/40">
+              <div class="w-10 h-10 rounded-full bg-olive text-white font-bold flex items-center justify-center text-sm">
+                MH
+              </div>
+              <div>
+                <h3 class="text-sm font-bold text-nau">Anh Minh Hoàng</h3>
+                <p class="text-xs text-than/60">HLV Fitness, TP. Hồ Chí Minh</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Testimonial 3: Mẹ gia đình -->
+          <article class="bg-kem/70 rounded-3xl p-6 border border-be/60 flex flex-col justify-between hover:shadow-card transition-shadow duration-300">
+            <div>
+              <div class="flex items-center gap-1 text-amber-500 text-sm mb-3">
+                ★★★★★
+                <span class="ml-2 text-xs font-semibold text-olive bg-olive/15 px-2 py-0.5 rounded">Đã mua Bánh Tráng Rau Củ &amp; Granola</span>
+              </div>
+              <p class="text-sm text-than/90 italic leading-relaxed">
+                "Mình mua bánh tráng rau củ về cuốn gỏi tôm thịt và granola ngũ cốc ăn sáng cùng sữa chua cho cả nhà. Bánh tráng dẻo mịn không hề bị rách hay nhão dính, granola giòn bùi thơm mật ong tự nhiên. Đóng gói rất cẩn thận, giao hàng nhanh chóng."
+              </p>
+            </div>
+            <div class="flex items-center gap-3 pt-6 mt-6 border-t border-be/40">
+              <div class="w-10 h-10 rounded-full bg-nau text-kem font-bold flex items-center justify-center text-sm">
+                TH
+              </div>
+              <div>
+                <h3 class="text-sm font-bold text-nau">Chị Thanh Hương</h3>
+                <p class="text-xs text-than/60">Mẹ bỉm 2 con, Đà Nẵng</p>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Trust Badges Bar -->
+        <div class="mt-12 p-6 rounded-2xl bg-kem border border-be/70 grid grid-cols-2 md:grid-cols-4 gap-6 items-center">
+          
+          <div class="flex items-center gap-3">
+            <div class="w-11 h-11 rounded-xl bg-olive/15 text-olive flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-nau">Nguồn Gốc Chọn Lọc</p>
+              <p class="text-[11px] text-than/70">Nông sản sạch Việt Nam &amp; nhập khẩu chính ngạch</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <div class="w-11 h-11 rounded-xl bg-olive/15 text-olive flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-nau">Seal Kín Chân Không</p>
+              <p class="text-[11px] text-than/70">Màng seal nhôm tiệt trùng, chống ẩm và mốc hạt</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <div class="w-11 h-11 rounded-xl bg-olive/15 text-olive flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-nau">Đổi Trả Nhanh 48H</p>
+              <p class="text-[11px] text-than/70">Bảo hành 1 đổi 1 nếu sản phẩm vỡ hay ẩm mốc do vận chuyển</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <div class="w-11 h-11 rounded-xl bg-olive/15 text-olive flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-nau">Hạn Dùng Luôn Mới</p>
+              <p class="text-[11px] text-than/70">Sản xuất quy mô nhỏ mỗi tuần, không tồn đọng kho</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 3. FEATURES & BENEFITS (INTEREST & DESIRE) -->
+    <!-- ========================================== -->
+    <section id="features" class="py-16 lg:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- 3 Core Pillars Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-olive font-bold text-xs uppercase tracking-widest bg-olive/10 px-3.5 py-1 rounded-full">Triết Lý Dinh Dưỡng</span>
+          <h2 class="text-3xl sm:text-4xl font-black text-nau mt-3 tracking-tight">
+            3 Trụ Cột Giá Trị Của Vườn Hạt
+          </h2>
+          <p class="text-base text-than/80 mt-3 leading-relaxed">
+            Chúng mình tin rằng ăn uống lành mạnh không phải là kiêng khem khắt khe, mà là việc hiểu rõ những gì nạp vào cơ thể và tận hưởng hương vị thuần khiết tự nhiên.
+          </p>
+        </div>
+
+        <!-- 3 Core Pillars Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+          
+          <!-- Pillar 1: Nguyên liệu & thông tin rõ ràng -->
+          <div class="bg-trang rounded-3xl p-8 border border-be/60 shadow-soft hover:shadow-card transition-all duration-300">
+            <div class="w-14 h-14 rounded-2xl bg-olive/15 text-olive flex items-center justify-center mb-6">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-nau mb-3">Minh Bạch Từ Nguyên Liệu</h3>
+            <p class="text-sm text-than/80 leading-relaxed">
+              Mọi sản phẩm của Vườn Hạt đều công khai chi tiết tỷ lệ thành phần hạt, khối lượng tịnh thực tế, chỉ số dinh dưỡng (Calo, Protein, Chất béo tốt) và hạn sử dụng rõ ràng. Không độn nguyên liệu rẻ tiền, không mập mờ nguồn gốc.
+            </p>
+            <div class="mt-6 pt-4 border-t border-be/40 flex items-center gap-2 text-xs font-semibold text-olive">
+              <span>Đạt tiêu chuẩn tự nhiên</span>
+              <span>→</span>
+            </div>
+          </div>
+
+          <!-- Pillar 2: Tiện lợi cho lối sống bận rộn -->
+          <div class="bg-trang rounded-3xl p-8 border border-be/60 shadow-soft hover:shadow-card transition-all duration-300">
+            <div class="w-14 h-14 rounded-2xl bg-be/40 text-nau flex items-center justify-center mb-6">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-nau mb-3">Tiện Lợi Cho Nhịp Sống Hiện Đại</h3>
+            <p class="text-sm text-than/80 leading-relaxed">
+              Tiết kiệm 30 phút lỉnh kỉnh chuẩn bị mỗi buổi sáng. Chỉ cần 1 phút mở nắp hũ hạt là bạn đã có ngay bữa ăn eat clean giàu năng lượng trước khi đi làm, giữa giờ họp căng thẳng hay trước và sau giờ rèn luyện thể thao.
+            </p>
+            <div class="mt-6 pt-4 border-t border-be/40 flex items-center gap-2 text-xs font-semibold text-nau">
+              <span>Sẵn sàng trong 3 phút</span>
+              <span>→</span>
+            </div>
+          </div>
+
+          <!-- Pillar 3: Dễ kết hợp vào thực đơn hàng ngày -->
+          <div class="bg-trang rounded-3xl p-8 border border-be/60 shadow-soft hover:shadow-card transition-all duration-300">
+            <div class="w-14 h-14 rounded-2xl bg-olive/15 text-olive flex items-center justify-center mb-6">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-nau mb-3">Biến Tấu Đa Dạng Thực Đơn</h3>
+            <p class="text-sm text-than/80 leading-relaxed">
+              Dễ dàng phối hợp cùng sữa chua Hy Lạp, sinh tố hoa quả tươi, bún gạo lứt nấu rau củ thanh mát, yến mạch ngâm qua đêm (overnight oats) hoặc rắc lên các món salad ức gà mà không làm thay đổi hương vị nguyên bản.
+            </p>
+            <div class="mt-6 pt-4 border-t border-be/40 flex items-center gap-2 text-xs font-semibold text-olive">
+              <span>Gợi ý thực đơn đa dạng</span>
+              <span>→</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ========================================== -->
+        <!-- PRODUCT SHOWCASE (DANH MỤC SẢN PHẨM)      -->
+        <!-- ========================================== -->
+        <div id="products" class="scroll-mt-24">
+          
+          <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+            <div>
+              <span class="text-olive font-bold text-xs uppercase tracking-widest bg-olive/10 px-3 py-1 rounded-full">Sản Phẩm Tuyển Chọn</span>
+              <h2 class="text-3xl font-black text-nau mt-2 tracking-tight">
+                Danh Mục Thực Phẩm Eat Clean
+              </h2>
+              <p class="text-sm text-than/75 mt-1">
+                Lựa chọn những món ăn lành, bún gạo lứt và các loại hạt giòn bùi cho chế độ sống khỏe.
+              </p>
+            </div>
+
+            <!-- Category Filter Tabs -->
+            <div class="flex flex-wrap gap-2 text-xs font-semibold" id="categoryFilters">
+              <button onclick="filterCategory('all', this)" class="filter-tab active bg-olive text-white px-4 py-2 rounded-full transition-all shadow-sm">
+                Tất Cả
+              </button>
+              <button onclick="filterCategory('granola', this)" class="filter-tab bg-trang hover:bg-be/40 text-than px-4 py-2 rounded-full transition-all border border-be/60">
+                Cookies Khoai Lang
+              </button>
+              <button onclick="filterCategory('nui', this)" class="filter-tab bg-trang hover:bg-be/40 text-than px-4 py-2 rounded-full transition-all border border-be/60">
+                Nui Ống Rau Củ
+              </button>
+              <button onclick="filterCategory('eatclean', this)" class="filter-tab bg-trang hover:bg-be/40 text-than px-4 py-2 rounded-full transition-all border border-be/60">
+                Bún Gạo Lức &amp; Bánh Tráng
+              </button>
+            </div>
+          </div>
+
+          <!-- Product Cards Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="productGrid">
+            
+            <!-- Product 1: Cookies khoai lang -->
+            <div class="product-card bg-trang rounded-3xl overflow-hidden border border-be/60 shadow-soft flex flex-col justify-between" data-category="granola">
+              <div class="relative">
+                <img src="4.png" 
+                     alt="Cookies khoai lang Vườn Hạt" 
+                     class="w-full h-52 object-cover" 
+                     loading="lazy">
+                <span class="absolute top-3 left-3 bg-red-600 text-white text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">Bán Chạy Nhất</span>
+                <span class="absolute top-3 right-3 bg-trang/90 backdrop-blur-sm text-nau text-[11px] font-bold px-2 py-0.5 rounded-full border border-be">Hũ Cookies</span>
+              </div>
+              <div class="p-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center gap-1 text-amber-500 text-xs mb-1">
+                    ★★★★★ <span class="text-than/50 text-[11px] font-normal">(840+ đã bán)</span>
+                  </div>
+                  <h3 class="font-bold text-base text-nau leading-snug">Cookies khoai lang</h3>
+                  <p class="text-xs text-than/75 mt-1 line-clamp-2">Khoai lang tự nhiên kết hợp yến mạch, hạt chia, hạt điều, bơ Anchor và mật ong. Bánh giòn tan thơm lừng vị khoai lang, ít calo chuẩn vị healthy.</p>
+                  
+                  <div class="mt-3 flex items-center justify-between">
+                    <div>
+                      <span class="text-lg font-black text-olive">145.000đ</span>
+                      <span class="text-xs text-than/40 line-through ml-1.5">185.000đ</span>
+                    </div>
+                    <span class="text-[11px] font-bold text-red-600 bg-red-50 px-2 py-0.5 rounded-full">-21%</span>
+                  </div>
+                </div>
+
+                <div class="mt-4 pt-4 border-t border-be/40 space-y-2">
+                  <div class="grid grid-cols-2 gap-2">
+                    <button onclick="openQuickView('prod1')" class="w-full text-xs font-semibold py-2 rounded-xl bg-kem hover:bg-be/40 text-nau border border-be/60 transition-colors">
+                      Xem Chi Tiết
+                    </button>
+                    <button onclick="addToSampleCart('Cookies khoai lang', 145000)" class="w-full text-xs font-semibold py-2 rounded-xl bg-olive hover:bg-olive-dark text-white transition-colors">
+                      Thêm Giỏ
+                    </button>
+                  </div>
+                  <div class="flex items-center justify-between pt-1 text-[11px] font-medium text-than">
+                    <a href="https://www.tiktok.com/@vuonhat_eatclean?_r=1&_t=ZS-9AjGgvUZVYq" target="_blank" rel="noopener noreferrer" class="hover:text-olive">
+                      TikTok Shop →
+                    </a>
+                    <a href="https://www.facebook.com/share/18fUya3iQN/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="hover:text-fb">
+                      Page Facebook →
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 2: Nui Ống Rau Củ Eatclean -->
+            <div class="product-card bg-trang rounded-3xl overflow-hidden border border-be/60 shadow-soft flex flex-col justify-between" data-category="nui">
+              <div class="relative">
+                <img src="2.jpg" 
+                     alt="Nui Ống Rau Củ Eatclean Vườn Hạt" 
+                     class="w-full h-52 object-cover" 
+                     loading="lazy">
+                <span class="absolute top-3 left-3 bg-olive text-white text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">Đặc Sản Sa Đéc</span>
+                <span class="absolute top-3 right-3 bg-trang/90 backdrop-blur-sm text-nau text-[11px] font-bold px-2 py-0.5 rounded-full border border-be">Gói 500g</span>
+              </div>
+              <div class="p-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center gap-1 text-amber-500 text-xs mb-1">
+                    ★★★★★ <span class="text-than/50 text-[11px] font-normal">(610+ đã bán)</span>
+                  </div>
+                  <h3 class="font-bold text-base text-nau leading-snug">Nui Ống Rau Củ Eatclean</h3>
+                  <p class="text-xs text-than/75 mt-1 line-clamp-2">100% Gạo nguyên chất và rau củ tự nhiên (gấc, đậu biếc, củ dền, lá dứa). Màu sắc bắt mắt, giàu chất xơ, dai ngon thanh nhẹ.</p>
+                  
+                  <div class="mt-3 flex items-center justify-between">
+                    <div>
+                      <span class="text-lg font-black text-olive">149.000đ</span>
+                      <span class="text-xs text-than/40 line-through ml-1.5">175.000đ</span>
+                    </div>
+                    <span class="text-[11px] font-bold text-red-600 bg-red-50 px-2 py-0.5 rounded-full">-15%</span>
+                  </div>
+                </div>
+
+                <div class="mt-4 pt-4 border-t border-be/40 space-y-2">
+                  <div class="grid grid-cols-2 gap-2">
+                    <button onclick="openQuickView('prod2')" class="w-full text-xs font-semibold py-2 rounded-xl bg-kem hover:bg-be/40 text-nau border border-be/60 transition-colors">
+                      Xem Chi Tiết
+                    </button>
+                    <button onclick="addToSampleCart('Nui Ống Rau Củ Eatclean 500g', 149000)" class="w-full text-xs font-semibold py-2 rounded-xl bg-olive hover:bg-olive-dark text-white transition-colors">
+                      Thêm Giỏ
+                    </button>
+                  </div>
+                  <div class="flex items-center justify-between pt-1 text-[11px] font-medium text-than">
+                    <a href="https://www.tiktok.com/@vuonhat_eatclean?_r=1&_t=ZS-9AjGgvUZVYq" target="_blank" rel="noopener noreferrer" class="hover:text-olive">
+                      TikTok Shop →
+                    </a>
+                    <a href="https://www.facebook.com/share/18fUya3iQN/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="hover:text-fb">
+                      Page Facebook →
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 3: Bún gạo lức đỏ eatclean -->
+            <div class="product-card bg-trang rounded-3xl overflow-hidden border border-be/60 shadow-soft flex flex-col justify-between" data-category="eatclean">
+              <div class="relative">
+                <img src="1.jpg" 
+                     alt="Bún Gạo Lức Đỏ Eatclean Vườn Hạt" 
+                     class="w-full h-52 object-cover" 
+                     loading="lazy">
+                <span class="absolute top-3 left-3 bg-red-700 text-white text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">Đặc Sản Cao Bằng</span>
+                <span class="absolute top-3 right-3 bg-trang/90 backdrop-blur-sm text-nau text-[11px] font-bold px-2 py-0.5 rounded-full border border-be">Gói 500g</span>
+              </div>
+              <div class="p-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center gap-1 text-amber-500 text-xs mb-1">
+                    ★★★★★ <span class="text-than/50 text-[11px] font-normal">(520+ đã bán)</span>
+                  </div>
+                  <h3 class="font-bold text-base text-nau leading-snug">Bún Gạo Lức Đỏ Eatclean</h3>
+                  <p class="text-xs text-than/75 mt-1 line-clamp-2">100% Gạo lứt huyết rồng tự nhiên Cao Bằng, giàu chất xơ, chỉ số GI thấp, 100g chín ~113 kcal, sợi dẻo dai không bở.</p>
+                  
+                  <div class="mt-3 flex items-center justify-between">
+                    <div>
+                      <span class="text-lg font-black text-olive">149.000đ</span>
+                      <span class="text-xs text-than/40 line-through ml-1.5">160.000đ</span>
+                    </div>
+                    <span class="text-[11px] font-bold text-red-600 bg-red-50 px-2 py-0.5 rounded-full">-7%</span>
+                  </div>
+                </div>
+
+                <div class="mt-4 pt-4 border-t border-be/40 space-y-2">
+                  <div class="grid grid-cols-2 gap-2">
+                    <button onclick="openQuickView('prod3')" class="w-full text-xs font-semibold py-2 rounded-xl bg-kem hover:bg-be/40 text-nau border border-be/60 transition-colors">
+                      Xem Chi Tiết
+                    </button>
+                    <button onclick="addToSampleCart('Bún Gạo Lức Đỏ Eatclean 500g', 149000)" class="w-full text-xs font-semibold py-2 rounded-xl bg-olive hover:bg-olive-dark text-white transition-colors">
+                      Thêm Giỏ
+                    </button>
+                  </div>
+                  <div class="flex items-center justify-between pt-1 text-[11px] font-medium text-than">
+                    <a href="https://www.tiktok.com/@vuonhat_eatclean?_r=1&_t=ZS-9AjGgvUZVYq" target="_blank" rel="noopener noreferrer" class="hover:text-olive">
+                      TikTok Shop →
+                    </a>
+                    <a href="https://www.facebook.com/share/18fUya3iQN/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="hover:text-fb">
+                      Page Facebook →
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 4: Bánh Tráng Rau Củ Eatclean -->
+            <div class="product-card bg-trang rounded-3xl overflow-hidden border border-be/60 shadow-soft flex flex-col justify-between" data-category="eatclean">
+              <div class="relative">
+                <img src="3.jpg" 
+                     alt="Bánh Tráng Rau Củ Eatclean Vườn Hạt" 
+                     class="w-full h-52 object-cover" 
+                     loading="lazy">
+                <span class="absolute top-3 left-3 bg-olive text-white text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">Đặc Sản Cao Bằng</span>
+                <span class="absolute top-3 right-3 bg-trang/90 backdrop-blur-sm text-nau text-[11px] font-bold px-2 py-0.5 rounded-full border border-be">Gói 500g</span>
+              </div>
+              <div class="p-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center gap-1 text-amber-500 text-xs mb-1">
+                    ★★★★★ <span class="text-than/50 text-[11px] font-normal">(430+ đã bán)</span>
+                  </div>
+                  <h3 class="font-bold text-base text-nau leading-snug">Bánh Tráng Rau Củ Eatclean</h3>
+                  <p class="text-xs text-than/75 mt-1 line-clamp-2">Chỉ ~20 calo/miếng, làm từ gạo nguyên chất và rau củ tươi. Bánh dẻo dai không nhão, hoàn hảo cho món gỏi cuốn rau củ, ức gà.</p>
+                  
+                  <div class="mt-3 flex items-center justify-between">
+                    <div>
+                      <span class="text-lg font-black text-olive">119.000đ</span>
+                      <span class="text-xs text-than/40 line-through ml-1.5">150.000đ</span>
+                    </div>
+                    <span class="text-[11px] font-bold text-red-600 bg-red-50 px-2 py-0.5 rounded-full">-20%</span>
+                  </div>
+                </div>
+
+                <div class="mt-4 pt-4 border-t border-be/40 space-y-2">
+                  <div class="grid grid-cols-2 gap-2">
+                    <button onclick="openQuickView('prod4')" class="w-full text-xs font-semibold py-2 rounded-xl bg-kem hover:bg-be/40 text-nau border border-be/60 transition-colors">
+                      Xem Chi Tiết
+                    </button>
+                    <button onclick="addToSampleCart('Bánh Tráng Rau Củ Eatclean 500g', 119000)" class="w-full text-xs font-semibold py-2 rounded-xl bg-olive hover:bg-olive-dark text-white transition-colors">
+                      Thêm Giỏ
+                    </button>
+                  </div>
+                  <div class="flex items-center justify-between pt-1 text-[11px] font-medium text-than">
+                    <a href="https://www.tiktok.com/@vuonhat_eatclean?_r=1&_t=ZS-9AjGgvUZVYq" target="_blank" rel="noopener noreferrer" class="hover:text-olive">
+                      TikTok Shop →
+                    </a>
+                    <a href="https://www.facebook.com/share/18fUya3iQN/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="hover:text-fb">
+                      Page Facebook →
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 4. OFFER & PRICE (TẠO ĐỘNG LỰC MUA NGAY)   -->
+    <!-- ========================================== -->
+    <section id="offers" class="py-16 lg:py-24 bg-gradient-to-b from-kem via-be/30 to-kem border-t border-be/50 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Flash Sale Header & Countdown Timer -->
+        <div class="bg-nau text-kem rounded-3xl p-6 sm:p-10 shadow-float mb-12 relative overflow-hidden">
+          <div class="absolute -right-10 -bottom-10 w-60 h-60 bg-olive/30 rounded-full blur-2xl"></div>
+
+          <div class="flex flex-col lg:flex-row items-center justify-between gap-6 relative z-10 text-center lg:text-left">
+            <div>
+              <div class="inline-flex items-center gap-2 bg-olive/80 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-2">
+                <span class="w-2 h-2 rounded-full bg-red-400 animate-ping"></span>
+                <span>Chương Trình Ưu Đãi Có Thời Hạn</span>
+              </div>
+              <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
+                Flash Sale Mở Bán: Tiết Kiệm Đến 30%
+              </h2>
+              <p class="text-sm text-be mt-1 max-w-xl">
+                Cơ hội trải nghiệm combo bữa sáng eat clean tiện lợi với mức giá ưu đãi nhất dành riêng cho khách hàng mới.
+              </p>
+            </div>
+
+            <!-- Interactive JS Countdown Component -->
+            <div class="flex items-center gap-2 sm:gap-3">
+              <div class="flex flex-col items-center">
+                <span id="timerHours" class="w-14 sm:w-16 h-14 sm:h-16 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl flex items-center justify-center text-2xl sm:text-3xl font-black text-white">08</span>
+                <span class="text-[10px] text-be uppercase mt-1 tracking-wider">Giờ</span>
+              </div>
+              <span class="text-xl font-bold text-be pb-4">:</span>
+              <div class="flex flex-col items-center">
+                <span id="timerMinutes" class="w-14 sm:w-16 h-14 sm:h-16 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl flex items-center justify-center text-2xl sm:text-3xl font-black text-white">45</span>
+                <span class="text-[10px] text-be uppercase mt-1 tracking-wider">Phút</span>
+              </div>
+              <span class="text-xl font-bold text-be pb-4">:</span>
+              <div class="flex flex-col items-center">
+                <span id="timerSeconds" class="w-14 sm:w-16 h-14 sm:h-16 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl flex items-center justify-center text-2xl sm:text-3xl font-black text-white">20</span>
+                <span class="text-[10px] text-be uppercase mt-1 tracking-wider">Giây</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Combo Offer Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+          
+          <!-- Combo 1: Khởi Đầu Eat Clean -->
+          <div class="bg-trang rounded-3xl p-6 sm:p-8 border border-be/70 shadow-soft flex flex-col justify-between hover:shadow-card transition-all">
+            <div>
+              <div class="flex justify-between items-start mb-4">
+                <span class="text-xs font-bold text-olive bg-olive/15 px-3 py-1 rounded-full uppercase">Combo Tiết Kiệm #1</span>
+                <span class="text-xs font-bold text-red-600 bg-red-50 px-2 py-0.5 rounded-full">Tiết kiệm 76.000đ</span>
+              </div>
+              <h3 class="text-xl font-bold text-nau">Combo Khởi Đầu Eat Clean</h3>
+              <p class="text-xs text-than/70 mt-1">Phù hợp cho người mới bắt đầu làm quen với bữa ăn lành mạnh.</p>
+              
+              <ul class="my-6 space-y-2.5 text-xs text-than/85">
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-olive flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                  <span><strong>1 Hũ Cookies Khoai Lang</strong></span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-olive flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                  <span><strong>1 Gói Bún Gạo Lức Đỏ Eatclean 500g</strong></span>
+                </li>
+                <li class="flex items-center gap-2 text-olive font-semibold">
+                  <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+                  <span>Tặng 1 Thìa Gỗ Dừa Organic + Ebook 7 Ngày Eat Clean</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="pt-4 border-t border-be/40 mb-4">
+                <div class="flex items-baseline gap-2">
+                  <span class="text-2xl font-black text-nau">269.000đ</span>
+                  <span class="text-sm text-than/40 line-through">345.000đ</span>
+                </div>
+                <span class="text-[11px] text-olive font-medium">Hỗ trợ mã giảm 15.000đ cho khách hàng mới</span>
+              </div>
+
+              <div class="space-y-2">
+                <a href="https://www.tiktok.com/@vuonhat_eatclean?_r=1&_t=ZS-9AjGgvUZVYq" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 bg-olive hover:bg-olive-dark text-white font-bold text-xs py-3 rounded-xl transition-all">
+                  <span>Mua Combo Này Trên TikTok Shop</span>
+                </a>
+                <a href="https://www.facebook.com/share/18fUya3iQN/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 bg-kem hover:bg-be/40 text-nau font-bold text-xs py-3 rounded-xl border border-be transition-all">
+                  <svg class="w-3.5 h-3.5 text-fb fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                  <span>Đặt Qua Page Facebook</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Combo 2: Năng Lượng Văn Phòng (BEST VALUE) -->
+          <div class="bg-trang rounded-3xl p-6 sm:p-8 border-2 border-olive shadow-card flex flex-col justify-between relative transform lg:-translate-y-2">
+            <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-olive text-white text-[11px] font-black px-4 py-1 rounded-full uppercase tracking-wider shadow-sm">
+              Được Chọn Mua Nhiều Nhất
+            </div>
+
+            <div>
+              <div class="flex justify-between items-start mb-4 mt-2">
+                <span class="text-xs font-bold text-olive bg-olive/15 px-3 py-1 rounded-full uppercase">Combo Trọn Gói #2</span>
+                <span class="text-xs font-bold text-red-600 bg-red-50 px-2 py-0.5 rounded-full">Tiết kiệm 110.000đ</span>
+              </div>
+              <h3 class="text-xl font-bold text-nau">Combo Năng Lượng Bền Bỉ</h3>
+              <p class="text-xs text-than/70 mt-1">Giải pháp bữa sáng &amp; bữa xế đủ đầy cho 1 tháng bận rộn.</p>
+              
+              <ul class="my-6 space-y-2.5 text-xs text-than/85">
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-olive flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                  <span><strong>2 Hũ Cookies Khoai Lang</strong></span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-olive flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                  <span><strong>1 Gói Bánh Tráng Rau Củ Eatclean 500g</strong></span>
+                </li>
+                <li class="flex items-center gap-2 text-olive font-semibold">
+                  <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+                  <span>Miễn Phí Vận Chuyển Toàn Quốc + Tặng 1 Bình Nước Thủy Tinh</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="pt-4 border-t border-be/40 mb-4">
+                <div class="flex items-baseline gap-2">
+                  <span class="text-2xl font-black text-olive">379.000đ</span>
+                  <span class="text-sm text-than/40 line-through">489.000đ</span>
+                </div>
+                <span class="text-[11px] text-olive font-medium">Freeship Extra + Voucher giảm trực tiếp</span>
+              </div>
+
+              <div class="space-y-2">
+                <a href="https://www.tiktok.com/@vuonhat_eatclean?_r=1&_t=ZS-9AjGgvUZVYq" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 bg-olive hover:bg-olive-dark text-white font-bold text-xs py-3 rounded-xl shadow-md transition-all">
+                  <span>Mua Combo Này Trên TikTok Shop</span>
+                </a>
+                <a href="https://www.facebook.com/share/18fUya3iQN/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 bg-kem hover:bg-be/40 text-nau font-bold text-xs py-3 rounded-xl border border-be transition-all">
+                  <svg class="w-3.5 h-3.5 text-fb fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                  <span>Đặt Qua Page Facebook</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Combo 3: Thực Phẩm Eat Clean Toàn Diện -->
+          <div class="bg-trang rounded-3xl p-6 sm:p-8 border border-be/70 shadow-soft flex flex-col justify-between hover:shadow-card transition-all">
+            <div>
+              <div class="flex justify-between items-start mb-4">
+                <span class="text-xs font-bold text-olive bg-olive/15 px-3 py-1 rounded-full uppercase">Combo Toàn Diện #3</span>
+                <span class="text-xs font-bold text-red-600 bg-red-50 px-2 py-0.5 rounded-full">Tiết kiệm 196.000đ</span>
+              </div>
+              <h3 class="text-xl font-bold text-nau">Combo Eat Clean Toàn Diện</h3>
+              <p class="text-xs text-than/70 mt-1">Trọn bộ tinh bột chậm và chất béo tốt cho chế độ giữ dáng.</p>
+              
+              <ul class="my-6 space-y-2.5 text-xs text-than/85">
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-olive flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                  <span><strong>2 Gói Bún Gạo Lức Đỏ Eatclean 500g</strong></span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-olive flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                  <span><strong>1 Hũ Cookies Khoai Lang</strong></span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-olive flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                  <span><strong>1 Gói Nui Ống Rau Củ Eatclean 500g</strong></span>
+                </li>
+                <li class="flex items-center gap-2 text-olive font-semibold">
+                  <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+                  <span>Tặng Kèm Sổ Tay 14 Ngày Lên Thực Đơn Eat Clean</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="pt-4 border-t border-be/40 mb-4">
+                <div class="flex items-baseline gap-2">
+                  <span class="text-2xl font-black text-nau">539.000đ</span>
+                  <span class="text-sm text-than/40 line-through">735.000đ</span>
+                </div>
+                <span class="text-[11px] text-olive font-medium">Miễn phí giao hàng toàn quốc</span>
+              </div>
+
+              <div class="space-y-2">
+                <a href="https://www.tiktok.com/@vuonhat_eatclean?_r=1&_t=ZS-9AjGgvUZVYq" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 bg-olive hover:bg-olive-dark text-white font-bold text-xs py-3 rounded-xl transition-all">
+                  <span>Mua Combo Này Trên TikTok Shop</span>
+                </a>
+                <a href="https://www.facebook.com/share/18fUya3iQN/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 bg-kem hover:bg-be/40 text-nau font-bold text-xs py-3 rounded-xl border border-be transition-all">
+                  <svg class="w-3.5 h-3.5 text-fb fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                  <span>Đặt Qua Page Facebook</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Voucher Code Box (Interactive Copy) -->
+        <div class="mt-12 bg-trang rounded-3xl p-6 border border-be/60 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4 max-w-2xl mx-auto">
+          <div class="flex items-center gap-3 text-center sm:text-left">
+            <div class="w-10 h-10 rounded-2xl bg-olive/15 text-olive flex items-center justify-center font-bold text-lg flex-shrink-0">
+              🏷️
+            </div>
+            <div>
+              <p class="text-sm font-bold text-nau">Mã Giảm Giá Độc Quyền Cho Khách Mới</p>
+              <p class="text-xs text-than/70">Nhập mã khi nhắn tin qua Page Facebook hoặc áp dụng tại sàn</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="bg-kem border border-dashed border-olive text-olive font-mono font-bold text-sm px-4 py-2 rounded-xl" id="voucherCode">VUONHAT15</span>
+            <button onclick="copyVoucher()" class="bg-olive hover:bg-olive-dark text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition-colors" id="copyBtn">
+              Sao Chép
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 5. POLICIES & TRUST (CHÍNH SÁCH THỰC PHẨM) -->
+    <!-- ========================================== -->
+    <section id="policies" class="py-16 bg-trang border-t border-be/40">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <span class="text-olive font-bold text-xs uppercase tracking-widest bg-olive/10 px-3.5 py-1 rounded-full">An Tâm Mua Sắm</span>
+          <h2 class="text-3xl font-black text-nau mt-3 tracking-tight">
+            Chính Sách Thực Phẩm Rõ Ràng &amp; Hướng Dẫn Bảo Quản
+          </h2>
+          <p class="text-sm text-than/75 mt-2">
+            Vì sản phẩm là thực phẩm tự nhiên không chất bảo quản công nghiệp, Vườn Hạt cam kết minh bạch mọi quy định để bạn hoàn toàn yên tâm.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Policy 1: Đồng kiểm khi nhận hàng -->
+          <div class="bg-kem/60 rounded-2xl p-6 border border-be/60">
+            <div class="w-10 h-10 rounded-xl bg-olive/15 text-olive flex items-center justify-center font-bold mb-4">
+              1
+            </div>
+            <h3 class="font-bold text-base text-nau mb-2">Đồng Kiểm Khi Nhận</h3>
+            <p class="text-xs text-than/80 leading-relaxed">
+              Bạn luôn được kiểm tra tình trạng hộp bên ngoài, tem niêm phong và hóa đơn trước khi thanh toán cho nhân viên giao hàng.
+            </p>
+          </div>
+
+          <!-- Policy 2: Đổi trả thực phẩm 48h -->
+          <div class="bg-kem/60 rounded-2xl p-6 border border-be/60">
+            <div class="w-10 h-10 rounded-xl bg-olive/15 text-olive flex items-center justify-center font-bold mb-4">
+              2
+            </div>
+            <h3 class="font-bold text-base text-nau mb-2">Đổi Trả Trong 48 Giờ</h3>
+            <p class="text-xs text-than/80 leading-relaxed">
+              Hỗ trợ đổi mới 1-1 ngay lập tức nếu sản phẩm bị móp vỡ bao bì, hỏng seal chân không hoặc không đạt chuẩn chất lượng do vận chuyển.
+            </p>
+          </div>
+
+          <!-- Policy 3: Bảo quản chuẩn tự nhiên -->
+          <div class="bg-kem/60 rounded-2xl p-6 border border-be/60">
+            <div class="w-10 h-10 rounded-xl bg-olive/15 text-olive flex items-center justify-center font-bold mb-4">
+              3
+            </div>
+            <h3 class="font-bold text-base text-nau mb-2">Hướng Dẫn Bảo Quản</h3>
+            <p class="text-xs text-than/80 leading-relaxed">
+              Bảo quản nơi khô ráo, thoáng mát. Với các loại hạt, sau khi mở seal nên đậy kín và để ngăn mát tủ lạnh để hạt luôn giòn thơm như mới.
+            </p>
+          </div>
+
+          <!-- Policy 4: Hạn dùng & an toàn -->
+          <div class="bg-kem/60 rounded-2xl p-6 border border-be/60">
+            <div class="w-10 h-10 rounded-xl bg-olive/15 text-olive flex items-center justify-center font-bold mb-4">
+              4
+            </div>
+            <h3 class="font-bold text-base text-nau mb-2">Hạn Dùng Thực Tế</h3>
+            <p class="text-xs text-than/80 leading-relaxed">
+              Hạn dùng tốt nhất: In rõ ràng dưới đáy bao bì theo từng mẻ sản xuất. Khuyên dùng ngon nhất trong 30 ngày kể từ khi mở nắp seal.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================== -->
+  <!-- FOOTER & TRUST (THÔNG TIN THƯƠNG HIỆU)     -->
+  <!-- ========================================== -->
+  <footer class="bg-kem border-t border-be/60 pt-16 pb-12 text-than">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-be/60">
+        
+        <!-- Brand Info & Mission (Col 1-5) -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="flex items-center gap-3">
+            <img src="logo.png" alt="Logo Vườn Hạt" class="w-12 h-12 object-contain rounded-full border border-be/60">
+            <div>
+              <span class="text-2xl font-black text-nau tracking-tight uppercase leading-none block">Vườn Hạt</span>
+              <span class="text-xs font-semibold text-olive uppercase tracking-widest">Eat Clean • Dinh Dưỡng Lành</span>
+            </div>
+          </div>
+          <p class="text-xs text-than/80 leading-relaxed max-w-sm">
+            Vườn Hạt ra đời với sứ mệnh mang đến nguồn dinh dưỡng thuần khiết từ thiên nhiên. Chúng mình tâm niệm mỗi bữa ăn lành mạnh là một sự chăm sóc dịu dàng dành cho sức khỏe lâu dài của bạn và gia đình.
+          </p>
+          <div class="pt-2 text-xs text-than/70 space-y-1.5">
+            <p><strong>Hotline tư vấn:</strong> <a href="tel:0898664917" class="text-nau font-bold hover:text-olive transition-colors text-sm">0898664917</a></p>
+            <p><strong>Email:</strong> <a href="mailto:vuonhat@eatclean.vn" class="text-nau font-bold hover:text-olive transition-colors">vuonhat@eatclean.vn</a></p>
+            <p><strong>Địa chỉ cửa hàng / kho:</strong> 12/13 khu phố 3A, phường Trảng Dài, Thành phố Đồng Nai</p>
+          </div>
+        </div>
+
+        <!-- Quick Links (Col 6-7) -->
+        <div class="lg:col-span-2 space-y-3">
+          <h4 class="text-sm font-bold text-nau uppercase tracking-wider">Danh Mục</h4>
+          <ul class="text-xs space-y-2 text-than/80">
+            <li><a href="#products" class="hover:text-olive transition-colors">Cookies Khoai Lang</a></li>
+            <li><a href="#products" class="hover:text-olive transition-colors">Nui Ống Rau Củ Eatclean</a></li>
+            <li><a href="#products" class="hover:text-olive transition-colors">Bún Gạo Lức Đỏ Eatclean</a></li>
+            <li><a href="#products" class="hover:text-olive transition-colors">Bánh Tráng Rau Củ Eatclean</a></li>
+            <li><a href="#offers" class="hover:text-olive transition-colors">Combo Ưu Đãi Mở Bán</a></li>
+          </ul>
+        </div>
+
+        <!-- Customer Care & Policies (Col 8-9) -->
+        <div class="lg:col-span-2 space-y-3">
+          <h4 class="text-sm font-bold text-nau uppercase tracking-wider">Chính Sách</h4>
+          <ul class="text-xs space-y-2 text-than/80">
+            <li><a href="#policies" class="hover:text-olive transition-colors">Chính sách đồng kiểm</a></li>
+            <li><a href="#policies" class="hover:text-olive transition-colors">Chính sách đổi trả 48 giờ</a></li>
+            <li><a href="#policies" class="hover:text-olive transition-colors">Hướng dẫn bảo quản hạt</a></li>
+            <li><a href="#policies" class="hover:text-olive transition-colors">Cam kết nguồn gốc sạch</a></li>
+            <li><a href="#policies" class="hover:text-olive transition-colors">Bảo mật thông tin khách hàng</a></li>
+          </ul>
+        </div>
+
+        <!-- Official Channels & Trust (Col 10-12) -->
+        <div class="lg:col-span-3 space-y-3">
+          <h4 class="text-sm font-bold text-nau uppercase tracking-wider">Kênh Mua Hàng &amp; Hỗ Trợ</h4>
+          <p class="text-xs text-than/70">
+            Đặt hàng nhanh chóng, tư vấn chế độ ăn eat clean và nhận ưu đãi qua các kênh chính thức:
+          </p>
+          
+          <div class="space-y-2 pt-1">
+            <a href="https://www.tiktok.com/@vuonhat_eatclean?_r=1&_t=ZS-9AjGgvUZVYq" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-than text-white text-xs font-semibold px-4 py-2.5 rounded-xl hover:bg-black transition-colors">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+              <span>TikTok Shop: @vuonhat_eatclean</span>
+            </a>
+            
+            <a href="https://www.facebook.com/share/18fUya3iQN/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-fb text-white text-xs font-semibold px-4 py-2.5 rounded-xl hover:bg-fb-dark transition-colors">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              <span>Page Facebook: Vườn Hạt - Thực Phẩm Lành</span>
+            </a>
+          </div>
+
+          <div class="pt-2 flex items-center gap-2 text-xs text-than/60">
+            <span>Giấy chứng nhận VSATTP: Số 2026/ATTP-HN</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright Bottom Bar -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-than/60 gap-4 text-center sm:text-left">
+        <p>© 2026 Bản quyền thuộc về thương hiệu <strong>Vườn Hạt</strong>. Mọi quyền được bảo lưu.</p>
+        <p class="text-[11px] text-than/50">Thực phẩm eat clean &amp; hạt dinh dưỡng tự nhiên cho lối sống khỏe.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================== -->
+  <!-- MOBILE STICKY BOTTOM ACTION BAR (CRO)      -->
+  <!-- ========================================== -->
+  <aside aria-label="Hành động nhanh trên điện thoại" class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-trang/95 backdrop-blur-md border-t border-be/60 p-2.5 flex items-center justify-between gap-2 shadow-float">
+    <button onclick="toggleCartDrawer()" class="flex flex-col items-center justify-center p-2 text-nau hover:text-olive transition-colors relative min-w-[50px]">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+      <span class="text-[10px] font-bold mt-0.5">Giỏ Hàng</span>
+      <span id="mobileCartCount" class="absolute 0 top-1 right-2 bg-olive text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">0</span>
+    </button>
+
+    <a href="https://www.tiktok.com/@vuonhat_eatclean?_r=1&_t=ZS-9AjGgvUZVYq" target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center gap-1.5 bg-than text-white text-xs font-bold py-3 rounded-xl shadow-sm">
+      <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+      <span>TikTok Shop</span>
+    </a>
+
+    <a href="https://www.facebook.com/share/18fUya3iQN/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center gap-1.5 bg-fb text-white text-xs font-bold py-3 rounded-xl shadow-sm">
+      <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      <span>Page Facebook</span>
+    </a>
+  </aside>
+
+  <!-- ========================================== -->
+  <!-- MODAL: QUICK VIEW SẢN PHẨM (XEM NHANH)   -->
+  <!-- ========================================== -->
+  <dialog id="quickViewModal" class="p-0 bg-transparent backdrop:bg-than/60 backdrop:backdrop-blur-sm max-w-2xl w-full m-auto rounded-3xl overflow-hidden focus:outline-none" aria-labelledby="modalTitle">
+    <div class="bg-trang rounded-3xl p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto text-than shadow-float border border-be/60">
+      
+      <!-- Close Button -->
+      <button onclick="closeQuickView()" class="absolute top-4 right-4 p-2 text-than/60 hover:text-nau bg-kem rounded-full transition-colors" aria-label="Đóng cửa sổ">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 items-start">
+        <div>
+          <img id="modalImg" src="" alt="Hình ảnh sản phẩm" class="w-full h-64 object-cover rounded-2xl border border-be/60 shadow-sm">
+          <div class="mt-3 flex items-center justify-between text-xs text-than/70">
+            <span>Khối lượng: <strong id="modalWeight" class="text-nau">500g</strong></span>
+            <span>Hạn dùng: <strong class="text-olive">In trên bao bì</strong></span>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <div>
+            <span id="modalTag" class="text-xs font-bold text-olive bg-olive/15 px-2.5 py-0.5 rounded-full uppercase">Sản Phẩm Eat Clean</span>
+            <h3 id="modalTitle" class="text-xl font-bold text-nau mt-2 leading-tight">Tên Sản Phẩm</h3>
+            <div class="flex items-center gap-2 mt-2">
+              <span id="modalPrice" class="text-2xl font-black text-olive">145.000đ</span>
+              <span id="modalOldPrice" class="text-sm text-than/40 line-through">185.000đ</span>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-xs font-bold text-nau uppercase tracking-wider">Thành phần chi tiết:</h4>
+            <p id="modalIngredients" class="text-xs text-than/80 mt-1 leading-relaxed">
+              Chi tiết thành phần...
+            </p>
+          </div>
+
+          <div class="bg-kem/80 p-3 rounded-xl border border-be/60">
+            <h4 class="text-[11px] font-bold text-nau uppercase tracking-wider mb-1">Giá trị dinh dưỡng (Trong 100g ước tính):</h4>
+            <div class="grid grid-cols-4 gap-1 text-center text-xs">
+              <div class="bg-trang p-1.5 rounded-lg border border-be/40">
+                <span class="block text-[10px] text-than/60">Calo</span>
+                <span id="modalCalo" class="font-bold text-olive">460 kcal</span>
+              </div>
+              <div class="bg-trang p-1.5 rounded-lg border border-be/40">
+                <span class="block text-[10px] text-than/60">Protein</span>
+                <span id="modalProtein" class="font-bold text-nau">14.2g</span>
+              </div>
+              <div class="bg-trang p-1.5 rounded-lg border border-be/40">
+                <span class="block text-[10px] text-than/60">Carb</span>
+                <span id="modalCarb" class="font-bold text-than">48.5g</span>
+              </div>
+              <div class="bg-trang p-1.5 rounded-lg border border-be/40">
+                <span class="block text-[10px] text-than/60">Fat tốt</span>
+                <span id="modalFat" class="font-bold text-olive">24.1g</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-2 pt-2">
+            <button id="modalAddCartBtn" class="w-full bg-olive hover:bg-olive-dark text-white font-bold text-xs py-3 rounded-xl shadow-sm transition-colors">
+              Thêm Vào Giỏ Hàng
+            </button>
+            <div class="grid grid-cols-2 gap-2">
+              <a href="https://www.tiktok.com/@vuonhat_eatclean?_r=1&_t=ZS-9AjGgvUZVYq" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-1.5 bg-than text-white text-xs font-semibold py-2.5 rounded-xl hover:bg-black transition-colors">
+                <span>TikTok Shop</span>
+              </a>
+              <a href="https://www.facebook.com/share/18fUya3iQN/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-1.5 bg-fb text-white text-xs font-semibold py-2.5 rounded-xl hover:bg-fb-dark transition-colors">
+                <span>Page Facebook</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </dialog>
+
+  <!-- ========================================== -->
+  <!-- DRAWER: GIỎ HÀNG (INTERACTIVE CART)        -->
+  <!-- ========================================== -->
+  <aside id="cartDrawer" aria-label="Giỏ hàng mua sắm" class="fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-trang shadow-2xl border-l border-be/60 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-between">
+    <div class="p-5 border-b border-be/40 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <svg class="w-5 h-5 text-olive" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+        <h3 class="font-bold text-base text-nau">Giỏ Hàng Của Bạn</h3>
+      </div>
+      <button onclick="toggleCartDrawer()" class="p-1.5 rounded-lg text-than/60 hover:text-nau hover:bg-kem" aria-label="Đóng giỏ hàng">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <!-- Cart Item List -->
+    <div id="cartItemsList" class="p-5 flex-1 overflow-y-auto space-y-4">
+      <div id="emptyCartNotice" class="text-center py-12 text-than/60">
+        <p class="text-sm">Giỏ hàng hiện đang trống.</p>
+        <p class="text-xs text-than/40 mt-1">Hãy bấm "Thêm Giỏ" ở danh mục sản phẩm để chọn món ngon nhé!</p>
+      </div>
+    </div>
+
+    <!-- Cart Footer & Checkout Links -->
+    <div class="p-5 border-t border-be/40 bg-kem/60 space-y-3">
+      <div class="flex justify-between items-center text-sm font-bold text-nau">
+        <span>Tổng tạm tính:</span>
+        <span id="cartTotalDisplay" class="text-lg text-olive">0đ</span>
+      </div>
+      <p class="text-[11px] text-than/70 font-medium">
+        Đặt hàng trực tiếp và nhận tư vấn nhanh qua các kênh chính thức:
+      </p>
+      <div class="space-y-2">
+        <a href="https://www.tiktok.com/@vuonhat_eatclean?_r=1&_t=ZS-9AjGgvUZVYq" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 bg-than hover:bg-black text-white text-xs font-bold py-3 rounded-xl transition-all">
+          <span>Tiến Hành Đặt Qua TikTok Shop</span>
+        </a>
+        <a href="https://www.facebook.com/share/18fUya3iQN/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 bg-fb hover:bg-fb-dark text-white text-xs font-bold py-3 rounded-xl transition-all">
+          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          <span>Tiến Hành Đặt Qua Page Facebook</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Toast Notification Container -->
+  <div id="toastNotification" class="fixed bottom-20 md:bottom-8 right-4 z-50 bg-nau text-white px-5 py-3 rounded-2xl shadow-float border border-be/40 text-xs font-medium flex items-center gap-3 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+    <span class="w-2 h-2 rounded-full bg-olive animate-ping"></span>
+    <span id="toastMessage">Đã thêm sản phẩm vào giỏ hàng!</span>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- JAVASCRIPT LOGIC & INTERACTIONS           -->
+  <!-- ========================================== -->
+  <script>
+    // ---------------------------------------------
+    // Dữ liệu mô tả sản phẩm cho Quick View Modal
+    // ---------------------------------------------
+    const productData = {
+      prod1: {
+        title: "Cookies Khoai Lang (Hũ)",
+        tag: "Bánh Ăn Kiêng & Eat Clean",
+        img: "4.png",
+        price: "145.000đ",
+        rawPrice: 145000,
+        oldPrice: "185.000đ",
+        weight: "Hũ",
+        ingredients: "Khoai lang, yến mạch, hạt chia, hạt điều, sữa tươi không đường, mật ong, bơ Anchor. Không đường tinh luyện, giòn tan thơm lừng vị khoai lang tự nhiên, dồi dào chất xơ và năng lượng lành mạnh.",
+        calo: "91.8 kcal / 20g",
+        protein: "3.2g",
+        carb: "12.5g",
+        fat: "3.1g"
+      },
+      prod2: {
+        title: "Nui Ống Rau Củ Eatclean (Gói 500g)",
+        tag: "Nui & Thực Phẩm Eat Clean",
+        img: "2.jpg",
+        price: "149.000đ",
+        rawPrice: 149000,
+        oldPrice: "175.000đ",
+        weight: "500g",
+        ingredients: "100% Gạo nguyên chất kết hợp nước ép rau củ tự nhiên: gấc đỏ, hoa đậu biếc, củ dền, lá dứa, khoai môn. Không phẩm màu nhân tạo, không chất bảo quản, chuẩn đặc sản làng nghề Sa Đéc.",
+        calo: "330 kcal",
+        protein: "7.8g",
+        carb: "72.5g",
+        fat: "1.2g"
+      },
+      prod3: {
+        title: "Bún Gạo Lức Đỏ Eatclean (Gói 500g)",
+        tag: "Bún & Thực Phẩm Eat Clean",
+        img: "1.jpg",
+        price: "149.000đ",
+        rawPrice: 149000,
+        oldPrice: "160.000đ",
+        weight: "500g",
+        ingredients: "100% Gạo lứt huyết rồng tự nhiên Cao Bằng và nước sạch. Không phẩm màu, không chất bảo quản, không hàn the. Giàu chất xơ và vitamin nhóm B, sợi dẻo dai không nát, phù hợp cho người ăn kiêng, tiểu đường và eat clean.",
+        calo: "113 kcal (100g chín)",
+        protein: "7.5g",
+        carb: "67.2g",
+        fat: "2.1g"
+      },
+      prod4: {
+        title: "Bánh Tráng Rau Củ Eatclean (Gói 500g)",
+        tag: "Bánh Tráng & Cuốn Eat Clean",
+        img: "3.jpg",
+        price: "119.000đ",
+        rawPrice: 119000,
+        oldPrice: "150.000đ",
+        weight: "500g",
+        ingredients: "Gạo bao thai Cao Bằng nguyên chất kết hợp rau củ tươi (gấc, củ dền, chùm ngây, mè đen), nước giếng ngầm sạch tự nhiên. Bánh dẻo dai tự nhiên, cuốn không bị rách hay dính nhão, calo cực thấp.",
+        calo: "~20 kcal / miếng",
+        protein: "6.5g",
+        carb: "70.2g",
+        fat: "0.8g"
+      }
+    };
+
+    // ---------------------------------------------
+    // Quick View Modal Controller
+    // ---------------------------------------------
+    const quickViewModal = document.getElementById('quickViewModal');
+    let currentSelectedProduct = null;
+
+    function openQuickView(prodId) {
+      const data = productData[prodId];
+      if (!data) return;
+
+      currentSelectedProduct = data;
+      document.getElementById('modalImg').src = data.img;
+      document.getElementById('modalTitle').textContent = data.title;
+      document.getElementById('modalTag').textContent = data.tag;
+      document.getElementById('modalPrice').textContent = data.price;
+      document.getElementById('modalOldPrice').textContent = data.oldPrice;
+      document.getElementById('modalWeight').textContent = data.weight;
+      document.getElementById('modalIngredients').textContent = data.ingredients;
+      document.getElementById('modalCalo').textContent = data.calo;
+      document.getElementById('modalProtein').textContent = data.protein;
+      document.getElementById('modalCarb').textContent = data.carb;
+      document.getElementById('modalFat').textContent = data.fat;
+
+      document.getElementById('modalAddCartBtn').onclick = function() {
+        addToSampleCart(data.title, data.rawPrice);
+        closeQuickView();
+      };
+
+      quickViewModal.showModal();
+    }
+
+    function closeQuickView() {
+      quickViewModal.close();
+    }
+
+    // Đóng modal khi click ra ngoài vùng backdrop
+    quickViewModal.addEventListener('click', (event) => {
+      const rect = quickViewModal.getBoundingClientRect();
+      const isInDialog = (
+        rect.top <= event.clientY &&
+        event.clientY <= rect.top + rect.height &&
+        rect.left <= event.clientX &&
+        event.clientX <= rect.left + rect.width
+      );
+      if (!isInDialog) {
+        quickViewModal.close();
+      }
+    });
+
+    // ---------------------------------------------
+    // Category Tabs Filter (Lọc danh mục tương tác)
+    // ---------------------------------------------
+    function filterCategory(category, buttonElement) {
+      // Đổi class active trên các nút bấm
+      const buttons = document.querySelectorAll('.filter-tab');
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-olive', 'text-white', 'shadow-sm');
+        btn.classList.add('bg-trang', 'text-than', 'border', 'border-be/60');
+      });
+
+      buttonElement.classList.remove('bg-trang', 'text-than', 'border', 'border-be/60');
+      buttonElement.classList.add('bg-olive', 'text-white', 'shadow-sm');
+
+      // Ẩn/Hiện sản phẩm tương ứng
+      const cards = document.querySelectorAll('#productGrid > .product-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'flex';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, 20);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(10px)';
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 200);
+        }
+      });
+    }
+
+    // ---------------------------------------------
+    // Countdown Timer Component (Giờ : Phút : Giây)
+    // ---------------------------------------------
+    function startCountdown() {
+      let hours = 8;
+      let minutes = 45;
+      let seconds = 20;
+
+      const hoursEl = document.getElementById('timerHours');
+      const minutesEl = document.getElementById('timerMinutes');
+      const secondsEl = document.getElementById('timerSeconds');
+
+      setInterval(() => {
+        if (seconds > 0) {
+          seconds--;
+        } else {
+          seconds = 59;
+          if (minutes > 0) {
+            minutes--;
+          } else {
+            minutes = 59;
+            if (hours > 0) {
+              hours--;
+            } else {
+              hours = 12; // Tự động reset chu kỳ flash sale
+            }
+          }
+        }
+
+        hoursEl.textContent = hours.toString().padStart(2, '0');
+        minutesEl.textContent = minutes.toString().padStart(2, '0');
+        secondsEl.textContent = seconds.toString().padStart(2, '0');
+      }, 1000);
+    }
+    startCountdown();
+
+    // ---------------------------------------------
+    // Giỏ Hàng & Toast Notification
+    // ---------------------------------------------
+    let cart = [];
+
+    function addToSampleCart(name, price) {
+      const existing = cart.find(item => item.name === name);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ name, price, qty: 1 });
+      }
+
+      updateCartUI();
+      showToast(`Đã thêm "${name}" vào giỏ hàng!`);
+    }
+
+    function updateCartUI() {
+      const totalCount = cart.reduce((acc, item) => acc + item.qty, 0);
+      const totalPrice = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
+
+      document.getElementById('cartCount').textContent = totalCount;
+      document.getElementById('mobileCartCount').textContent = totalCount;
+      document.getElementById('cartTotalDisplay').textContent = totalPrice.toLocaleString('vi-VN') + 'đ';
+
+      const list = document.getElementById('cartItemsList');
+      if (cart.length === 0) {
+        list.innerHTML = `
+          <div id="emptyCartNotice" class="text-center py-12 text-than/60">
+            <p class="text-sm">Giỏ hàng hiện đang trống.</p>
+            <p class="text-xs text-than/40 mt-1">Hãy bấm "Thêm Giỏ" ở danh mục sản phẩm để chọn món ngon nhé!</p>
+          </div>
+        `;
+      } else {
+        list.innerHTML = cart.map((item, index) => `
+          <div class="bg-kem/80 p-3 rounded-2xl border border-be/60 flex items-center justify-between">
+            <div class="flex-1 pr-2">
+              <h4 class="text-xs font-bold text-nau leading-tight">${item.name}</h4>
+              <p class="text-[11px] text-olive font-semibold mt-0.5">${item.price.toLocaleString('vi-VN')}đ</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-bold text-than bg-trang px-2 py-0.5 rounded-lg border border-be/40">x${item.qty}</span>
+              <button onclick="removeItem(${index})" class="text-red-500 hover:text-red-700 text-xs p-1" title="Xóa">✕</button>
+            </div>
+          </div>
+        `).join('');
+      }
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      updateCartUI();
+    }
+
+    function toggleCartDrawer() {
+      const drawer = document.getElementById('cartDrawer');
+      drawer.classList.toggle('translate-x-full');
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toastNotification');
+      const toastMsg = document.getElementById('toastMessage');
+      toastMsg.textContent = message;
+
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-24', 'opacity-0');
+      }, 3000);
+    }
+
+    // ---------------------------------------------
+    // Sao chép mã Voucher (Copy to Clipboard)
+    // ---------------------------------------------
+    function copyVoucher() {
+      const code = document.getElementById('voucherCode').innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        const copyBtn = document.getElementById('copyBtn');
+        copyBtn.textContent = 'Đã chép!';
+        copyBtn.classList.remove('bg-olive');
+        copyBtn.classList.add('bg-nau');
+
+        showToast(`Đã sao chép mã giảm giá: ${code}`);
+
+        setTimeout(() => {
+          copyBtn.textContent = 'Sao Chép';
+          copyBtn.classList.remove('bg-nau');
+          copyBtn.classList.add('bg-olive');
+        }, 2000);
+      });
+    }
+
+    // ---------------------------------------------
+    // Mobile Drawer Navigation Menu
+    // ---------------------------------------------
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    }
+
+    function closeMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.add('hidden');
+    }
+  </script>
+</body>
+</html>
